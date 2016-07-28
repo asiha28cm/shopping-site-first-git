@@ -4,8 +4,8 @@
 --------------------------------------------------*/
 
 @mixin fontsize($size: 24, $base: 10) {
-    font-size: $size + px;
-    font-size: ($size / $base) * 1rem;
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
 }
 
 
@@ -13,7 +13,7 @@
 --------------------------------------------------*/
 
 img {
-    display: block;
+  display: block;
 }
 
 
@@ -21,7 +21,7 @@ img {
 --------------------------------------------------*/
 
 html {
-    background-color: #f9f8f6;
+  background-color: #f9f8f6;
 }
 
 $red: #9d1a2d;
@@ -30,84 +30,100 @@ $bage: #e2ddd4;
 $brown: #887f69;
 $text: #524c3e;
 
+/* サイト全体をセンタリング
+--------------------------------------------------*/
+body {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 /* ヘッダー
 --------------------------------------------------*/
 
 header {
-    padding: 0 20px;
-    #header_in {
-        padding-top: 10px;
-        padding-bottom: 4px;
-    }
-    h1 {
-        margin: 0;
+  padding: 0 20px;
+  .navi {
+    width: 100%;
+  }
+  @media (max-width: 550px) {
+    .logo {
+      max-width: 100%;
+      h1 {
+        padding: 20px 0 10px 0;
+        img {
+          margin: 0 auto;
+        }
+      }
     }
     .navi {
-        width: 100%;
+      width: 100%;
+      .sp_navi_li {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 0;
+        img {
+            margin: 0 5px;
+        }
+      }
+      .sp_navi_open_li {
+        display: none;
+        width: 80px;
+        height: auto;
+        text-align: center;
+        border: 1px solid $text;
+        background: white;
+        list-style: none;
+        position: absolute;
+        top: 100px;
+        right: 20px;
+        z-index: 100;
+        li {
+          border: 1px solid $text;
+          margin: 0;
+          padding: 0;
+        }
+        a {
+          text-decoration: none;
+          color: $text;
+        }
+      }
     }
-    @media (max-width: 550px) {
-        .logo {
-            width: 100%;
-            h1 {
-                img {
-                    margin: 0 auto;
-                }
-            }
-        }
-        .navi {
-            width: 100%;
-            .sp_navi {
-                vertical-align: top;
-            }
-            .sp_navi_li {
-                list-style: none;
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                margin: 0 auto;
-            }
-            .sp_navi_open_li {
-                width: 80px;
-                height: auto;
-                text-align: center;
-                border: 1px solid $text;
-                background: white;
-                list-style: none;
-                position: absolute;
-                top: 100px;
-                right: 20px;
-                li {
-                    border: 1px solid $text;
-                    margin: 0;
-                    padding: 0;
-                }
-                a {
-                    text-decoration: none;
-                    color: $text;
-                }
-            }
-        }
-        .pc_navi {
-            display: none;
-        }
+    .pc_navi {
+      display: none;
     }
-    @media (min-width: 550px) {
-        .sp_navi {
-            display: none;
-        }
-        .pc_navi {
-            display: inline-block;
-            li {
-                margin: 0;
-                padding: 0;
-                list-style: none;
-                a {
-                    text-decoration: none;
-                    color: $text;
-                    font-weight: bold;
-                    padding: 10px;
-                }
-            }
-        }
+  }
+  @media (min-width: 550px) {
+    h1 {
+        padding: 40px 0;
     }
+    .sp_navi {
+      display: none;
+    }
+    .pc_navi {
+      @include fontsize(12);
+      padding: 60px 0;
+      float: right;
+      ul {
+        margin-bottom: 0;
+      }
+      li {
+        margin-bottom: 0;
+        padding: 0;
+        display: inline-block;
+        vertical-align: bottom;
+        list-style: none;
+        img {
+          display: inline-block;
+        }
+        a {
+          text-decoration: none;
+          color: $text;
+          margin: 5px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }

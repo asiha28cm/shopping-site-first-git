@@ -11,33 +11,37 @@ img {
 html {
   background-color: #f9f8f6; }
 
+/* サイト全体をセンタリング
+--------------------------------------------------*/
+body {
+  max-width: 960px;
+  margin: 0 auto; }
+
 /* ヘッダー
 --------------------------------------------------*/
 header {
   padding: 0 20px; }
-  header #header_in {
-    padding-top: 10px;
-    padding-bottom: 4px; }
-  header h1 {
-    margin: 0; }
-  header navi {
+  header .navi {
     width: 100%; }
   @media (max-width: 550px) {
     header .logo {
-      width: 100%; }
-      header .logo h1 img {
-        margin: 0 auto; }
+      max-width: 100%; }
+      header .logo h1 {
+        padding: 20px 0 10px 0; }
+        header .logo h1 img {
+          margin: 0 auto; }
     header .navi {
       width: 100%; }
-      header .navi .sp_navi {
-        vertical-align: top; }
       header .navi .sp_navi_li {
         list-style: none;
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        margin: 0 auto; }
+        margin: 0; }
+        header .navi .sp_navi_li img {
+          margin: 0 5px; }
       header .navi .sp_navi_open_li {
+        display: none;
         width: 80px;
         height: auto;
         text-align: center;
@@ -46,7 +50,8 @@ header {
         list-style: none;
         position: absolute;
         top: 100px;
-        right: 20px; }
+        right: 20px;
+        z-index: 100; }
         header .navi .sp_navi_open_li li {
           border: 1px solid #524c3e;
           margin: 0;
@@ -57,18 +62,29 @@ header {
     header .pc_navi {
       display: none; } }
   @media (min-width: 550px) {
+    header h1 {
+      padding: 40px 0; }
     header .sp_navi {
       display: none; }
     header .pc_navi {
-      display: inline-block; }
+      font-size: 12px;
+      font-size: 1.2rem;
+      padding: 60px 0;
+      float: right; }
+      header .pc_navi ul {
+        margin-bottom: 0; }
       header .pc_navi li {
-        margin: 0;
+        margin-bottom: 0;
         padding: 0;
+        display: inline-block;
+        vertical-align: bottom;
         list-style: none; }
+        header .pc_navi li img {
+          display: inline-block; }
         header .pc_navi li a {
           text-decoration: none;
           color: #524c3e;
-          font-weight: bold;
-          padding: 10px; } }
+          margin: 5px;
+          font-weight: bold; } }
 
 /*# sourceMappingURL=style.css.map */
