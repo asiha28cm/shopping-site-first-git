@@ -20,22 +20,25 @@ img {
 /* 色設定
 --------------------------------------------------*/
 
-html {
-  background-color: #f9f8f6;
-}
-
 $red: #9d1a2d;
 $gray: #b0b0b0;
 $bage: #e2ddd4;
 $brown: #887f69;
 $text: #524c3e;
+$base: #f9f8f6;
+html {
+  background-color: $base;
+}
+
 
 /* サイト全体をセンタリング
 --------------------------------------------------*/
+
 body {
   max-width: 960px;
   margin: 0 auto;
 }
+
 
 /* ヘッダー
 --------------------------------------------------*/
@@ -64,7 +67,7 @@ header {
         align-items: flex-start;
         margin: 0;
         img {
-            margin: 0 5px;
+          margin: 0 5px;
         }
       }
       .sp_navi_open_li {
@@ -96,14 +99,14 @@ header {
   }
   @media (min-width: 550px) {
     h1 {
-        padding: 40px 0;
+      padding: 40px 0 0 0;
     }
     .sp_navi {
       display: none;
     }
     .pc_navi {
       @include fontsize(12);
-      padding: 60px 0;
+      padding: 50px 0 20px;
       float: right;
       ul {
         margin-bottom: 0;
@@ -124,6 +127,74 @@ header {
           font-weight: bold;
         }
       }
+    }
+  }
+}
+
+main {
+  clear: both;
+  .owl-nav {
+    display: none;
+  }
+  .owl-dots {
+    position: relative;
+    top: 0;
+  }
+  .owl-dots .owl-dot {
+    display: inline-block;
+  }
+  .owl-dots .owl-dot span {
+    display: block;
+    border-radius: 0;
+    width: 25px;
+    height: 2px;
+    margin: 0 8px 0 0;
+    background-color: #aaaaaa;
+  }
+  .owl-dots .active span {
+    background-color: #9d1a2d !important;
+  }
+  .sp_title_img {
+    padding: 15px 0;
+    img {
+      margin: 0 auto;
+    }
+  }
+  .pc_title_img {
+    padding: 20px 0;
+  }
+  .item_box_container {
+    display: flex;
+    .item_box {
+      padding: 10px;
+      background-color: white;
+      border: 1px solid $base;
+      .item_title {
+        @include fontsize(11);
+        font-weight: bold;
+      }
+      p {
+        @include fontsize(11);
+        font-weight: bold;
+        display: inline;
+        vertical-align: middle;
+      }
+    }
+  }
+  @media (max-width: 550px) {
+    .pc_title_img {
+      display: none;
+    }
+    #pc_items {
+        display: none;
+    }
+  }
+  @media (min-width: 550px) {
+    .sp_title_img {
+      display: none;
+    }
+    #sp_items {
+        display: none;
     }
   }
 }
