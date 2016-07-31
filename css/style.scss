@@ -44,7 +44,7 @@ body {
 --------------------------------------------------*/
 
 header {
-  padding: 0 20px;
+  padding: 0;
   .navi {
     width: 100%;
   }
@@ -130,6 +130,10 @@ header {
     }
   }
 }
+
+
+/* メイン
+--------------------------------------------------*/
 
 main {
   clear: both;
@@ -254,3 +258,114 @@ main {
     }
   }
 }
+
+form {
+  margin-bottom: 0;
+  .search_box {
+    width: 100%;
+    height: 2.2rem;
+    margin-bottom: 0;
+    border-radius: 0;
+    border: none;
+    background: url("../images/top/search_icon.png") no-repeat 95% 50% #eeeeee;
+  }
+}
+
+.sidemenu_box {
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+navi {
+  ul {
+    list-style: none;
+    margin-bottom: 10px;
+    li {
+      height: 25px;
+      margin: 0;
+      padding: 10px;
+      background-color: white;
+      border-bottom: 1px solid $base;
+      list-style-position: inside;
+      @include fontsize(12);
+      font-weight: bold;
+    }
+  }
+}
+
+.sidemenu_title {
+  padding: 10px;
+  background-color: $brown;
+  height: 25px;
+  position: relative;
+  .textdecoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    vertical-align: middle;
+  }
+}
+
+#pagelink {
+  margin-bottom: 10px;
+}
+
+.middle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#pagelink {
+  color: white;
+  @include fontsize(12);
+  font-weight: bold;
+}
+
+#itemsearch {
+  margin-bottom: 10px;
+}
+
+#itemsearch_box {
+  padding: 18px;
+}
+
+#flex_box {
+  display: flex;
+  flex-wrap: wrap;
+  #flex {
+    width: 47%;
+    height: 47%;
+    margin-right: 15px;
+  }
+  p {
+    width: 47%;
+    @include fontsize(12);
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0;
+  }
+  #flexbtn {
+    margin: 10px 0;
+  }
+}
+
+#pagetop {
+  a {
+    display: block;
+    padding: 20px;
+    img {
+      width: 35%;
+      margin: auto;
+    }
+  }
+}
+
+@media (min-width: 550px) {}
