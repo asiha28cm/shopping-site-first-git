@@ -172,7 +172,6 @@ main {
   .flex_container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
   }
   .flex_item {
     width: 42.14%;
@@ -242,7 +241,6 @@ main {
     }
     .info_flex_container {
       flex-direction: column;
-      justify-content: center;
     }
     #info_box {
       margin-bottom: 10px;
@@ -267,7 +265,7 @@ form {
     height: 2.2rem;
     margin-bottom: 0;
     border-radius: 0;
-    border: none;
+    border: 1px solid white;
     background: url("../images/top/search_icon.png") no-repeat 95% 50% #eeeeee;
   }
 }
@@ -279,55 +277,80 @@ form {
   position: relative;
 }
 
-navi {
-  ul {
-    list-style: none;
-    margin-bottom: 10px;
-    li {
-      height: 25px;
-      margin: 0;
-      padding: 10px;
-      background-color: white;
-      border-bottom: 1px solid $base;
-      list-style-position: inside;
-      @include fontsize(12);
-      font-weight: bold;
-    }
-  }
-}
-
 .sidemenu_title {
-  padding: 10px;
+  max-width: 100%;
+  height: 20px;
   background-color: $brown;
-  min-height: 25px;
   position: relative;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  @include fontsize(12);
   a {
-    padding: 12.5px 0 0 10px;
-  }
-  .textdecoration {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    text-decoration: none;
-    color: white;
-    vertical-align: middle;
+    margin: 0;
+  }
+  .middle {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    margin: auto;
+    img {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+    }
   }
 }
 
-.middle {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+#bottom {
+  margin-bottom: 10px;
+  background: url("../images/top/next_icon.png") no-repeat 95% 50% $brown;
 }
 
-#pagelink {
-  margin-bottom: 10px;
-  color: white;
-  @include fontsize(12);
-  font-weight: bold;
+#bg_img {
+  background: url("../images/top/down_icon.png") no-repeat 95% 50% $brown;
+}
+
+navi {
+  ul {
+    list-style: none;
+    margin-bottom: 10px;
+    li {
+      display: flex;
+      position: relative;
+      height: 25px;
+      margin: 0;
+      width: 100%;
+      height: 40px;
+      background-color: white;
+      border-bottom: 1px solid $base;
+      list-style-position: inside;
+      @include fontsize(12);
+      font-weight: bold;
+      a {
+        width: 100%;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        transition: all 0.5s;
+      }
+      a:hover {
+        background-color: $red;
+        color: white;
+      }
+      img {
+        position: absolute;
+        top: 12px;
+        right: 10px;
+      }
+    }
+  }
 }
 
 #itemsearch {
@@ -427,5 +450,77 @@ footer {
   }
   .margin {
     margin-right: 1rem;
+  }
+}
+
+
+/* category.html  ここから
+--------------------------------------------------*/
+
+.pk_navi {
+  background-color: $bage;
+  color: $brown;
+  padding: 10px;
+  @include fontsize(12);
+  font-weight: bold;
+  margin-bottom: 10px;
+  ul {
+    margin: 0;
+  }
+  .pk_list {
+    display: inline;
+    img {
+      display: inline;
+    }
+    a {
+      text-decoration: none;
+      color: $brown;
+      transition: all 0.5s;
+    }
+    .margin {
+      margin-right: 1rem;
+    }
+  }
+}
+
+@media (min-width: 550px) {
+  .pk_list {
+    a:hover {
+      color: $red;
+    }
+  }
+  #sp_img {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+#pc_img {
+  display: none;
+  }
+}
+.backnext {
+  position: relative;
+  margin :20px 0;
+  height: 50px;
+  div {
+    background-color: $brown;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    @include fontsize(14);
+    display: inline-block;
+    padding: 10px;
+    width: 85px;
+    position: absolute;
+  }
+  .back_btn {
+    bottom: 0;
+    left: 0;
+  }
+  .next_btn {
+    bottom: 0;
+    right: 0;
   }
 }
