@@ -409,8 +409,16 @@ footer {
   .row {
     border-top: 1px solid $bage;
   }
-  .center {
+  .footer_navi {
     text-align: center;
+    @include fontsize(13);
+    padding: 10px;
+    margin: 0;
+  }
+  @media (min-width: 550px) {
+    .footer_navi {
+      margin: 20px 0;
+    }
   }
   .copyright {
     @include fontsize(12);

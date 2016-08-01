@@ -302,8 +302,15 @@ navi ul {
       padding-bottom: 10px; } }
 footer .row {
   border-top: 1px solid #e2ddd4; }
-footer .center {
-  text-align: center; }
+footer .footer_navi {
+  text-align: center;
+  font-size: 13px;
+  font-size: 1.3rem;
+  padding: 10px;
+  margin: 0; }
+@media (min-width: 550px) {
+  footer .footer_navi {
+    margin: 20px 0; } }
 footer .copyright {
   font-size: 12px;
   font-size: 1.2rem;
