@@ -125,6 +125,14 @@ main {
     padding: 10px;
     background-color: white;
     border: 1px solid #f9f8f6; }
+    main .flex_item a {
+      text-decoration: none;
+      color: black; }
+      main .flex_item a img {
+        transition: all 0.5s; }
+    @media (min-width: 550px) {
+      main .flex_item a:hover img {
+        opacity: 0.5; } }
     main .flex_item .item_title {
       font-size: 10px;
       font-size: 1rem;

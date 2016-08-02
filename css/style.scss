@@ -182,6 +182,18 @@ main {
     padding: 10px;
     background-color: white;
     border: 1px solid $base;
+    a {
+      text-decoration: none;
+      color: black;
+      img {
+        transition: all 0.5s;
+      }
+    }
+    @media (min-width: 550px) {
+      a:hover img {
+        opacity: 0.5;
+      }
+    }
     .item_title {
       @include fontsize(10);
       font-weight: bold;
