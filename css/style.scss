@@ -127,6 +127,9 @@ header {
           margin: 5px;
           font-weight: bold;
         }
+        a:hover {
+          opacity: 0.7;
+        }
       }
     }
   }
@@ -394,6 +397,9 @@ navi {
     #flexbtn {
       margin: 10px auto;
     }
+    a:hover img {
+      opacity: 0.7;
+    }
   }
 }
 
@@ -495,13 +501,14 @@ footer {
 }
 
 @media (max-width: 550px) {
-#pc_img {
-  display: none;
+  #pc_img {
+    display: none;
   }
 }
+
 .backnext {
   position: relative;
-  margin :20px 0;
+  margin: 20px 0;
   height: 40px;
   div {
     background-color: $brown;
