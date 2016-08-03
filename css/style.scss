@@ -363,6 +363,7 @@ navi {
     margin-bottom: 10px;
   }
 }
+
 form {
   margin-bottom: 0;
   position: relative;
@@ -376,11 +377,11 @@ form {
   }
   #quantity_box {
     position: absolute;
-    top: 0px;
+    top: 10px;
     left: 120px;
     display: inline-block;
     width: 50%;
-    height: 50px;
+    height: 40px;
     margin-bottom: 0;
     border-radius: 0;
     border: 1px solid #e8e4da;
@@ -556,6 +557,7 @@ footer {
       height: 100%;
       color: white;
       text-decoration: none;
+      transition: all 0.5s;
     }
   }
   .back_btn {
@@ -565,6 +567,14 @@ footer {
   .next_btn {
     bottom: 0;
     right: 0;
+  }
+}
+
+@media (min-width: 550px) {
+  .backnext {
+    a:hover {
+      background-color: $red;
+    }
   }
 }
 
@@ -584,10 +594,11 @@ footer {
 
 .products {
   background-color: white;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 10px;
   .slider_pro {
     margin: 10px 0;
+    border-bottom: 1px solid #e3e8cf;
     #display_img {
       margin-bottom: 10px;
       img {
@@ -599,7 +610,6 @@ footer {
       flex-wrap: wrap;
       justify-content: space-between;
       margin-bottom: 10px;
-      border-bottom: 1px solid #e3e8cf;
     }
     li {
       list-style: none;
@@ -612,6 +622,41 @@ footer {
       cursor: pointer;
     }
   }
+  .flex_item {
+    width: 41%;
+  }
+}
+
+@media (min-width: 550px) {
+  .products {
+    .slider_pro {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      #display_img {
+        width: 70%;
+        margin-right: 5px;
+      }
+      ul {
+        width: 27%;
+        li {
+          min-width: 47%;
+          img {
+            transition: 0.5s;
+          }
+          img:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+    .flex_item {
+      width: 28.8%;
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .table_title {
@@ -619,7 +664,6 @@ footer {
 }
 
 .mytable {
-  border-bottom: 1px solid #e3e8cf;
   table {
     width: 100%;
     border: 2px solid #e8e4da;
@@ -628,6 +672,7 @@ footer {
       td {
         border: 2px solid #e8e4da;
         text-align: center;
+        color: #887f69;
         padding: 10px;
         img {
           margin: auto;
@@ -649,12 +694,14 @@ footer {
 .flex_container_pro {
   .flex_item_pro {
     margin-bottom: 10px;
+    border-top: 1px solid #e3e8cf;
     border-bottom: 1px solid #e3e8cf;
     position: relative;
     height: 60px;
     line-height: 60px;
     img {
-      display: inline-block;
+      position: absolute;
+      top: 20px;
     }
     p {
       display: inline;
@@ -671,18 +718,94 @@ footer {
       }
     }
   }
+  #item1 {
+    margin-bottom: 0;
+  }
+  #item2 {
+    border-top: none;
+  }
 }
-#cartbtn {
+
+.cartbtn {
   margin: 0 auto 10px;
   padding-bottom: 10px;
-  img {
-    margin: auto;
+}
+
+@media (min-width: 550px) {
+  #cartflex {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 20px 0;
+    height: 120px;
+    #item1 {
+      padding: 10px;
+      width: 50%;
+      height: 30px;
+      line-height: 50px;
+      p {
+        height: 30px;
+        top: 0;
+      }
+    }
+    #item2 {
+      padding: 10px;
+      width: 50%;
+      height: 30px;
+      form {
+        #quantity_box {
+          height: 30px;
+          top: 0;
+        }
+      }
+      img {
+        top: 8px;
+      }
+    }
+    .cartbtn {
+      width: 40%;
+      height: 40%;
+      margin: -60px 0 0 auto;
+      padding: 0;
+      a img {
+        transition: 0.5s;
+      }
+      a:hover img {
+        opacity: 0.7;
+      }
+    }
   }
 }
 
 .textarea {
+  p {
+    margin: 0;
+    padding: 10px 0;
+    letter-spacing: 0.1rem;
+  }
   .itemname {
     @include fontsize(18);
-
+    border-bottom: 1px solid $brown;
+    color: $brown;
+    font-weight: bold;
+  }
+  .itemtitle {
+    @include fontsize (18);
+    color: $brown;
+    font-weight: bold;
+  }
+  .itemtext {
+    @include fontsize(13);
+  }
+  .mytable {
+    color: #887f69;
+    td {
+      height: 30px;
+    }
+    td:first-child {
+      width: 30%;
+    }
+    tr:first-child {
+      background-color: white;
+    }
   }
 }
